@@ -1,0 +1,10 @@
+<div (click)="setActive.emit(item.id)" class="wrapper" [ngClass]="{
+  'active': item.active
+}">
+  <div class="image-card">
+    <ion-img [src]="item.image" [alt]='item.label'></ion-img>
+  </div>
+  <p class="ion-no-margin">
+    {{item.label}}
+  </p>
+</div>
