@@ -1,16 +1,23 @@
-import { Component } from '@angular/core';
+import { FoodService } from './../../services/food.service';
+import { Component, OnInit } from '@angular/core';
 import { flatMap } from 'rxjs';
 import { Category } from 'src/app/models/categories.model';
+import { Food } from 'src/app/models/food.model';
 
 @Component({
   selector: 'app-menu',
   templateUrl: 'menu.page.html',
   styleUrls: ['menu.page.scss'],
 })
-export class menuPage {
+export class menuPage implements OnInit {
   categories: Category[] = [];
-  constructor() {
+  foods: Food[] = [];
+
+  constructor(private foodService: FoodService) {}
+
+  ngOnInit(): void {
     this.getCategories();
+    this.foods = this.foodService.getFoods();
   }
 
   getCategories() {
