@@ -1,2 +1,6 @@
-<ion-searchbar search-icon='../../../assets/icon/icon _search normal 1_.svg' [debounce]="1000" autocorrect='on'
-  (ionChange)="onSearchChange($event)"></ion-searchbar>
+<ion-searchbar
+  search-icon="../../../assets/icon/icon _search normal 1_.svg"
+  [debounce]="0"
+  autocorrect="on"
+  (ionInput)="onSearchChange($event)"
+></ion-searchbar>

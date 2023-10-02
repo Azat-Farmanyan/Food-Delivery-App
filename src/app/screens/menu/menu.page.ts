@@ -12,13 +12,14 @@ import { Food } from 'src/app/models/food.model';
 export class menuPage implements OnInit {
   categories: Category[] = [];
   foods: Food[] = [];
+  originalFoodsArr: Food[] = [];
   activeCategory: string = 'All';
 
   constructor(private foodService: FoodService) {}
 
   ngOnInit(): void {
     this.getCategories();
-    this.foods = this.foodService.getFoods();
+    this.foods = this.originalFoodsArr = this.foodService.getFoods();
   }
 
   getCategories() {
@@ -57,5 +58,15 @@ export class menuPage implements OnInit {
         el.active = true;
       } else el.active = false;
     });
+  }
+
+  search(searchedProduct: string) {
+    if (searchedProduct.length === 0) {
+      this.foods = this.originalFoodsArr;
+    } else {
+      this.foods = this.originalFoodsArr.filter((el) =>
+        el.title.toLowerCase().includes(searchedProduct)
+      );
+    }
   }
 }
