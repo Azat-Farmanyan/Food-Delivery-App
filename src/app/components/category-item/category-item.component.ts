@@ -8,7 +8,7 @@ import { Category } from 'src/app/models/categories.model';
 })
 export class CategoryItemComponent implements OnInit {
   @Input() item: Category;
-  @Output() setActive = new EventEmitter();
+  @Output() setActive = new EventEmitter<{ id: number; label: string }>();
 
   constructor() {}
 

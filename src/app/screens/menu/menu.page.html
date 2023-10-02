@@ -1,8 +1,7 @@
 <ion-content>
-
   <!-- HEADER -->
   <div class="header">
-    <h1 class='big-title'>Menu</h1>
+    <h1 class="big-title">Menu</h1>
     <div class="avatar">
       <ion-img src="../../../assets/icon/default-user.png"></ion-img>
     </div>
@@ -13,13 +12,20 @@
 
   <!-- Categories -->
   <div class="categories">
-    <app-category-item *ngFor="let item of categories" [item]="item"
-      (setActive)="setActiveCategory($event)"></app-category-item>
+    <app-category-item
+      *ngFor="let item of categories"
+      [item]="item"
+      (setActive)="setActiveCategory($event)"
+    ></app-category-item>
   </div>
 
   <!-- Products -->
-  <h1 class="list-header"> Popular </h1>
+  <h1 class="list-header">{{activeCategory}}</h1>
   <div class="food-list">
-    <app-food-card *ngFor="let food of foods" [item]="food"></app-food-card>
+    <!-- {{ foods | productFilter:activeCategory }}  -->
+    <app-food-card
+      *ngFor="let food of foods | productFilter:activeCategory"
+      [item]="food"
+    ></app-food-card>
   </div>
 </ion-content>

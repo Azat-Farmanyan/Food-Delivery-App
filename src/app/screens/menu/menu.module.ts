@@ -8,6 +8,7 @@ import { menuPageRoutingModule } from './menu-routing.module';
 import { SearchbarModule } from 'src/app/components/searchbar/searchbar.module';
 import { CategoryItemModule } from 'src/app/components/category-item/category-item.module';
 import { FoodCardModule } from 'src/app/components/food-card/food-card.module';
+import { ProductFilterPipe } from 'src/app/pipes/product-filter.pipe';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { FoodCardModule } from 'src/app/components/food-card/food-card.module';
     CategoryItemModule,
     FoodCardModule,
   ],
-  declarations: [menuPage],
+  declarations: [menuPage, ProductFilterPipe],
 })
 export class menuPageModule {}

@@ -12,6 +12,7 @@ import { Food } from 'src/app/models/food.model';
 export class menuPage implements OnInit {
   categories: Category[] = [];
   foods: Food[] = [];
+  activeCategory: string = 'All';
 
   constructor(private foodService: FoodService) {}
 
@@ -49,10 +50,12 @@ export class menuPage implements OnInit {
     ];
   }
 
-  setActiveCategory(id: number) {
+  setActiveCategory(item: { id: number; label: string }) {
     this.categories.map((el) => {
-      if (el.id === id) el.active = true;
-      else el.active = false;
+      if (el.id === item.id) {
+        this.activeCategory = item.label;
+        el.active = true;
+      } else el.active = false;
     });
   }
 }
