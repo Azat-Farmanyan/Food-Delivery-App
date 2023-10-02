@@ -11,7 +11,6 @@ export class ProductFilterPipe implements PipeTransform {
     if (!products || !category) {
       return products; // Return the original array if it's not defined or the category is not defined
     }
-
     return products.filter((product) => product.category === category);
   }
 }

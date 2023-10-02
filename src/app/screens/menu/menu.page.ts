@@ -13,7 +13,7 @@ export class menuPage implements OnInit {
   categories: Category[] = [];
   foods: Food[] = [];
   originalFoodsArr: Food[] = [];
-  activeCategory: string = 'All';
+  activeCategory: string = '';
 
   constructor(private foodService: FoodService) {}
 
@@ -49,6 +49,8 @@ export class menuPage implements OnInit {
         active: false,
       },
     ];
+
+    this.activeCategory = this.categories[0].label;
   }
 
   setActiveCategory(item: { id: number; label: string }) {
