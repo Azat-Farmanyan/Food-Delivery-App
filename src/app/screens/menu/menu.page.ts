@@ -14,6 +14,7 @@ export class menuPage implements OnInit {
   foods: Food[] = [];
   originalFoodsArr: Food[] = [];
   activeCategory: string = '';
+  searchedProduct: string = '';
 
   constructor(private foodService: FoodService) {}
 
@@ -66,9 +67,12 @@ export class menuPage implements OnInit {
     if (searchedProduct.length === 0) {
       this.foods = this.originalFoodsArr;
     } else {
+      this.searchedProduct = searchedProduct;
       this.foods = this.originalFoodsArr.filter((el) =>
         el.title.toLowerCase().includes(searchedProduct)
       );
+
+      console.log(this.foods);
     }
   }
 }

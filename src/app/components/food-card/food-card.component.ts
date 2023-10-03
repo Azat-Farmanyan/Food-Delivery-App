@@ -1,4 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { Food } from 'src/app/models/food.model';
 
 @Component({
@@ -6,9 +12,18 @@ import { Food } from 'src/app/models/food.model';
   templateUrl: './food-card.component.html',
   styleUrls: ['./food-card.component.scss'],
 })
-export class FoodCardComponent implements OnInit {
+export class FoodCardComponent implements OnInit, OnChanges {
   @Input() item: Food;
+  noProduct: boolean = false;
   constructor() {}
 
   ngOnInit() {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (!this.item) this.noProduct = true;
+
+    // console.log(this.noProduct);
+
+    // console.log(this.item);
+  }
 }

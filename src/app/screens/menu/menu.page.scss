@@ -42,4 +42,18 @@ ion-content {
       grid-template-columns: repeat(1, 1fr);
     }
   }
+
+  .no-result {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    background: #f3f3f3;
+    gap: 13px;
+    ion-img {
+      max-width: 46px;
+      width: 100%;
+    }
+  }
 }
