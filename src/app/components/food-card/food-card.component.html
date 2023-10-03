@@ -1,8 +1,9 @@
-<div class="card">
-  <ng-content></ng-content>
-  <ion-img [src]='item.image'></ion-img>
+<div class="card" *ngIf="item">
+  <ion-img (click)="addToFavorite(item)" class='add-to-favorite'
+    [src]="item.favorite ? activeHeartPath : notActiveHeartPath"></ion-img>
+  <ion-img class='item-img' [src]='item.image'></ion-img>
   <h3 class="item-title">{{item.title}}</h3>
   <h4 class="item-price"><sup>$</sup>{{item.price}}</h4>
-  <ion-icon (click)="onAdd.emit(item)" name="add-outline"></ion-icon>
+  <ion-icon class='add-to-cart' name="add-outline"></ion-icon>
   <!-- <ion-img [src]="'../../../assets/foods/BBQ Bacon Burger.png'"></ion-img> -->
 </div>

@@ -18,6 +18,7 @@ export class FoodService {
         description:
           'Juicy beef patty with cheddar cheese, lettuce, tomato, and special sauce.',
         category: 'Burgers',
+        favorite: false,
       },
       {
         id: 2,
@@ -27,6 +28,7 @@ export class FoodService {
         description:
           'Creamy fettuccine pasta with grilled chicken and Alfredo sauce.',
         category: 'Dishes',
+        favorite: false,
       },
       {
         id: 3,
@@ -36,6 +38,7 @@ export class FoodService {
         description:
           'Fresh slices of raw salmon, served with wasabi and soy sauce.',
         category: 'Sushi',
+        favorite: false,
       },
       {
         id: 4,
@@ -45,6 +48,7 @@ export class FoodService {
         description:
           'Grilled burger topped with crispy bacon, BBQ sauce, and onions.',
         category: 'Burgers',
+        favorite: false,
       },
       {
         id: 5,
@@ -54,6 +58,7 @@ export class FoodService {
         description:
           'Tender beef strips in a creamy mushroom sauce, served over noodles.',
         category: 'Dishes',
+        favorite: false,
       },
       {
         id: 6,
@@ -63,6 +68,7 @@ export class FoodService {
         description:
           'Sushi roll filled with spicy tuna, cucumber, and avocado.',
         category: 'Sushi',
+        favorite: false,
       },
       {
         id: 7,
@@ -72,6 +78,7 @@ export class FoodService {
         description:
           'Plant-based patty with lettuce, tomato, and vegan mayonnaise.',
         category: 'Burgers',
+        favorite: false,
       },
       {
         id: 8,
@@ -81,6 +88,7 @@ export class FoodService {
         description:
           'Succulent shrimp sautéed in garlic, butter, and white wine.',
         category: 'Dishes',
+        favorite: false,
       },
       {
         id: 9,
@@ -89,6 +97,7 @@ export class FoodService {
         image: this.imagePath + 'California Roll.jpg',
         description: 'Sushi roll with crab, avocado, cucumber, and tobiko.',
         category: 'Sushi',
+        favorite: false,
       },
       {
         id: 10,
@@ -98,6 +107,7 @@ export class FoodService {
         description:
           'Two beef patties, double bacon, cheese, lettuce, and secret sauce.',
         category: 'Burgers',
+        favorite: false,
       },
       {
         id: 11,
@@ -107,6 +117,7 @@ export class FoodService {
         description:
           'Breaded chicken cutlet with marinara sauce and melted mozzarella.',
         category: 'Dishes',
+        favorite: false,
       },
       {
         id: 12,
@@ -116,6 +127,7 @@ export class FoodService {
         description:
           'Sushi roll featuring eel, avocado, cucumber, and eel sauce.',
         category: 'Sushi',
+        favorite: false,
       },
       {
         id: 13,
@@ -125,6 +137,7 @@ export class FoodService {
         description:
           'Grilled burger topped with sautéed mushrooms and Swiss cheese.',
         category: 'Burgers',
+        favorite: false,
       },
       {
         id: 14,
@@ -134,6 +147,7 @@ export class FoodService {
         description:
           'Soft tortillas filled with seasoned ground beef, lettuce, and salsa.',
         category: 'Dishes',
+        favorite: false,
       },
       {
         id: 15,
@@ -143,6 +157,7 @@ export class FoodService {
         description:
           'Sushi roll with a colorful assortment of fish and avocado.',
         category: 'Sushi',
+        favorite: false,
       },
       {
         id: 16,
@@ -152,6 +167,7 @@ export class FoodService {
         description:
           'Stir-fried mixed vegetables with tofu and a savory sauce.',
         category: 'Dishes',
+        favorite: false,
       },
     ];
   }

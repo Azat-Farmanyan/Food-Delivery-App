@@ -1,6 +1,7 @@
 import { FavoriteFoodService } from './../../services/favoriteFood.service';
 import { FoodService } from './../../services/food.service';
 import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 import { flatMap } from 'rxjs';
 import { Category } from 'src/app/models/categories.model';
 import { Food } from 'src/app/models/food.model';
@@ -17,10 +18,7 @@ export class menuPage implements OnInit {
   activeCategory: string = '';
   searchedProduct: string = '';
 
-  constructor(
-    private foodService: FoodService,
-    public favoriteFoodService: FavoriteFoodService
-  ) {}
+  constructor(private foodService: FoodService) {}
 
   ngOnInit(): void {
     this.getCategories();

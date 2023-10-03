@@ -10,7 +10,7 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  ion-img {
+  .item-img {
     max-width: 91px;
     height: 91px;
     width: 100%;
@@ -41,7 +41,8 @@
       margin-right: 0;
     }
   }
-  ion-icon {
+  .add-to-cart {
+    cursor: pointer;
     position: absolute;
     left: 50%;
     bottom: -20px;
@@ -52,5 +53,11 @@
     padding: 12px;
     border-radius: 50%;
     color: #fff;
+  }
+  .add-to-favorite {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    cursor: pointer;
   }
 }
