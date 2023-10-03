@@ -1,3 +1,5 @@
+import { Food } from 'src/app/models/food.model';
+import { FavoriteFoodService } from './../../services/favoriteFood.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './favourites.component.html',
   styleUrls: ['./favourites.component.scss'],
 })
-export class FavouritesComponent  implements OnInit {
+export class FavouritesComponent implements OnInit {
+  favoriteFoods: Food[] = [];
 
-  constructor() { }
+  constructor(private favoriteFoodService: FavoriteFoodService) {}
 
-  ngOnInit() {}
-
+  ngOnInit() {
+    this.favoriteFoods = this.favoriteFoodService.getFavorites();
+  }
 }

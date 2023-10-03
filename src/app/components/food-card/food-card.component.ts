@@ -1,8 +1,10 @@
 import {
   Component,
+  EventEmitter,
   Input,
   OnChanges,
   OnInit,
+  Output,
   SimpleChanges,
 } from '@angular/core';
 import { Food } from 'src/app/models/food.model';
@@ -14,6 +16,7 @@ import { Food } from 'src/app/models/food.model';
 })
 export class FoodCardComponent implements OnInit, OnChanges {
   @Input() item: Food;
+  @Output() onAdd = new EventEmitter();
   noProduct: boolean = false;
   constructor() {}
 

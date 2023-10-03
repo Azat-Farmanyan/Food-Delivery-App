@@ -1,3 +1,4 @@
+import { FavoriteFoodService } from './../../services/favoriteFood.service';
 import { FoodService } from './../../services/food.service';
 import { Component, OnInit } from '@angular/core';
 import { flatMap } from 'rxjs';
@@ -16,7 +17,10 @@ export class menuPage implements OnInit {
   activeCategory: string = '';
   searchedProduct: string = '';
 
-  constructor(private foodService: FoodService) {}
+  constructor(
+    private foodService: FoodService,
+    public favoriteFoodService: FavoriteFoodService
+  ) {}
 
   ngOnInit(): void {
     this.getCategories();
@@ -71,8 +75,6 @@ export class menuPage implements OnInit {
       this.foods = this.originalFoodsArr.filter((el) =>
         el.title.toLowerCase().includes(searchedProduct)
       );
-
-      console.log(this.foods);
     }
   }
 }

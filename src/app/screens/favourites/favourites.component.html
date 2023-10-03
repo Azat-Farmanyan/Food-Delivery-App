@@ -1,3 +1,10 @@
 <ion-content>
-  <h1 style='position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);'>Coming soon</h1>
+  <!-- HEADER -->
+  <div class="header">
+    <h1 class="big-title">Favourites</h1>
+  </div>
+
+  <div class="food-list">
+    <app-food-card *ngFor="let food of favoriteFoods" [item]="food"></app-food-card>
+  </div>
 </ion-content>

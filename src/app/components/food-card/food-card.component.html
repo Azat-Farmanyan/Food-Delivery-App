@@ -3,6 +3,6 @@
   <ion-img [src]='item.image'></ion-img>
   <h3 class="item-title">{{item.title}}</h3>
   <h4 class="item-price"><sup>$</sup>{{item.price}}</h4>
-  <ion-icon name="add-outline"></ion-icon>
+  <ion-icon (click)="onAdd.emit(item)" name="add-outline"></ion-icon>
   <!-- <ion-img [src]="'../../../assets/foods/BBQ Bacon Burger.png'"></ion-img> -->
 </div>
