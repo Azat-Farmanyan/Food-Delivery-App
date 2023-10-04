@@ -6,7 +6,11 @@
       src="../../../../assets/icon/icon _arrow left_.svg"
     ></ion-img>
 
-    <ion-img class="white-icon" [src]="hearthPathNotActive"></ion-img>
+    <ion-img
+      class="white-icon"
+      [src]="isFavorite ? hearthPathActive : hearthPathNotActive"
+      (click)="isFavorite ? removeFromFavorites() : addToFavorites()"
+    ></ion-img>
   </header>
   <div class="detail-body" *ngIf="item">
     <ion-img class="item-image" [src]="item.image"></ion-img>

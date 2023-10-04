@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Pipe } from '@angular/core';
 import { Food } from '../models/food.model';
 
 @Injectable({
@@ -18,5 +18,9 @@ export class FavoriteFoodService {
 
   getFavorites(): Food[] {
     return this.favoriteFoods;
+  }
+
+  checkFoodInFavorites(id: number) {
+    return this.favoriteFoods.find((el) => el.id === id);
   }
 }
