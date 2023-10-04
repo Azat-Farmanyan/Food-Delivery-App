@@ -1,0 +1,43 @@
+<ion-content>
+  <header class="detail-header">
+    <ion-img
+      (click)="goBack()"
+      class="return-icon"
+      src="../../../../assets/icon/icon _arrow left_.svg"
+    ></ion-img>
+
+    <ion-img class="white-icon" [src]="hearthPathNotActive"></ion-img>
+  </header>
+  <div class="detail-body" *ngIf="item">
+    <ion-img class="item-image" [src]="item.image"></ion-img>
+    <div class="detail-content">
+      <div class="det-cont-header">
+        <h3 class="detail-title">
+          {{ item.title }}
+        </h3>
+        <p class="price">
+          <sup>$</sup>
+          {{ item.price }}
+        </p>
+      </div>
+
+      <div class="mini-card-block">
+        <div class="mini-card">
+          <ion-img src="../../../../assets/icon/icon _clock 1_.svg"></ion-img>
+          <span> {{ item.preparationTime }}m </span>
+        </div>
+        <div class="mini-card">
+          <ion-img src="../../../../assets/icon/icon _star_.svg"></ion-img>
+          <span>{{ item.rating }}</span>
+        </div>
+      </div>
+
+      <div class="detail-about">
+        <h4 class="subtitle">About</h4>
+        <p class="about-text">{{ item.description }}</p>
+      </div>
+
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</ion-content>

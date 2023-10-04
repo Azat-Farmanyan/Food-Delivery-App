@@ -12,26 +12,42 @@
 
   <!-- Categories -->
   <div class="categories">
-    <app-category-item *ngFor="let item of categories" [item]="item"
-      (setActive)="setActiveCategory($event)"></app-category-item>
+    <app-category-item
+      *ngFor="let item of categories"
+      [item]="item"
+      (setActive)="setActiveCategory($event)"
+    ></app-category-item>
   </div>
 
   <!-- Products -->
   <h1 class="list-header">{{activeCategory}}</h1>
   <div class="food-list">
     <!-- {{ foods | productFilter:activeCategory }}  -->
-    <app-food-card *ngFor="let food of foods | productFilter:activeCategory" [item]="food">
+    <app-food-card
+      *ngFor="let food of foods | productFilter:activeCategory"
+      [item]="food"
+    >
     </app-food-card>
-
   </div>
-  <div class='no-result' *ngIf="(foods | productFilter:activeCategory).length === 0">
+  <div
+    class="no-result"
+    *ngIf="(foods | productFilter:activeCategory).length === 0"
+  >
     <ion-img src="../../../assets/icon/icon search 1.svg"></ion-img>
-    <p class='not-result-message'>
-      Sorry, we couldn't find any <span style='font-weight: 700; color: #6B4ECA;     overflow-wrap: break-word;
-      word-wrap: break-word;
-      hyphens: auto;
-      white-space: normal;'>“{{searchedProduct}}”</span> in
-      this category
+    <p class="not-result-message">
+      Sorry, we couldn't find any
+      <span
+        style="
+          font-weight: 700;
+          color: #6b4eca;
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          hyphens: auto;
+          white-space: normal;
+        "
+        >“{{searchedProduct}}”</span
+      >
+      in this category
     </p>
   </div>
 </ion-content>

@@ -6,4 +6,6 @@ export interface Food {
   description?: string;
   category: string;
   favorite?: boolean;
+  preparationTime?: number;
+  rating?: number;
 }
