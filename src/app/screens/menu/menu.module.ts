@@ -10,6 +10,7 @@ import { CategoryItemModule } from 'src/app/components/category-item/category-it
 import { FoodCardModule } from 'src/app/components/food-card/food-card.module';
 import { ProductFilterPipe } from 'src/app/pipes/product-filter.pipe';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { FavoriteIconModule } from 'src/app/components/favorite-icon/favorite-icon.module';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
     SearchbarModule,
     CategoryItemModule,
     FoodCardModule,
+    FavoriteIconModule,
   ],
   declarations: [menuPage, ProductFilterPipe, ItemDetailComponent],
 })

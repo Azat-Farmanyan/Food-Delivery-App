@@ -44,6 +44,11 @@ export class FoodCardComponent implements OnInit, OnChanges {
     this.presentToast('top');
   }
 
+  addToCart(event: Event) {
+    event.stopPropagation();
+    console.log('add to cart');
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
     if (!this.item) this.noProduct = true;
   }

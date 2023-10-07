@@ -1,0 +1,7 @@
+<ion-img
+  class="heart-icon"
+  [src]="isFavorite ? hearthPathActive : hearthPathNotActive"
+  [@heartAnimation]="isFavorite ? 'active' : 'inactive'"
+></ion-img>
+
+(click)="isFavorite ? removeFromFavorites() : addToFavorites()"

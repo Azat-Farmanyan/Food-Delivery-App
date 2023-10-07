@@ -1,5 +1,6 @@
 import { Injectable, Pipe } from '@angular/core';
 import { Food } from '../models/food.model';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -7,20 +8,25 @@ import { Food } from '../models/food.model';
 export class FavoriteFoodService {
   constructor() {}
   imagePath = '../../../assets/foods/';
-  favoriteFoods: Food[] = [];
+  favoriteFoods = new BehaviorSubject<Food[]>([]);
 
   addFavorite(item: Food) {
-    this.favoriteFoods.push(item);
+    const currentValue = this.favoriteFoods.value;
+    const updatedValue = [item, ...currentValue];
+    this.favoriteFoods.next(updatedValue);
   }
   removeFavorite(item: Food) {
-    this.favoriteFoods = this.favoriteFoods.filter((el) => el.id !== item.id);
+    const currentValue = this.favoriteFoods.value.filter(
+      (el) => el.id !== item.id
+    );
+    this.favoriteFoods.next(currentValue);
   }
 
   getFavorites(): Food[] {
-    return this.favoriteFoods;
+    return this.favoriteFoods.value;
   }
 
   checkFoodInFavorites(id: number) {
-    return this.favoriteFoods.find((el) => el.id === id);
+    return this.favoriteFoods.value.find((el) => el.id === id);
   }
 }
