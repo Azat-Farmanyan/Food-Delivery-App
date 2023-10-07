@@ -42,8 +42,8 @@ export class ItemDetailComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.getItem();
     this.routerSubs = this.routerService.previousPath.subscribe((prevPath) => {
-      console.log(prevPath);
-      console.log('current url', this.router.url);
+      // console.log(prevPath);
+      // console.log('current url', this.router.url);
 
       this.previousUrl = prevPath;
     });
@@ -53,10 +53,10 @@ export class ItemDetailComponent implements OnInit, OnDestroy {
     this.itemSubs = this.route.params.subscribe((el) => {
       const itemId = +el['id'];
       const itemRes = this.foodService.getFoodById(itemId);
-      console.log(itemRes);
+      // console.log(itemRes);
 
       if (typeof itemRes === 'undefined') {
-        console.log('go back');
+        // console.log('go back');
 
         this.goBack();
       }

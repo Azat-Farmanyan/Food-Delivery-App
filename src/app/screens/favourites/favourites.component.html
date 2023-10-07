@@ -4,10 +4,19 @@
     <h1 class="medium-title">Favourites</h1>
   </div>
 
-  <div class="food-list">
+  <div class="food-list" *ngIf="favoriteFoods.length > 0; else emptyFavorites">
     <app-food-card
       *ngFor="let food of favoriteFoods"
       [item]="food"
     ></app-food-card>
   </div>
+  <ng-template #emptyFavorites>
+    <div class="empty-favorites">
+      <ion-img src="../../../assets/icon/favorite-empty-icon.svg"></ion-img>
+      <p>
+        You haven't added any favorite foods yet. Start adding your favorite
+        dishes to this page!
+      </p>
+    </div>
+  </ng-template>
 </ion-content>

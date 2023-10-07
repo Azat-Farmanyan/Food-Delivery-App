@@ -22,7 +22,7 @@ export class FavouritesComponent implements OnInit, OnDestroy {
   getFavorites() {
     this.foodsSubs = this.favoriteFoodService.favoriteFoods.subscribe(
       (foods) => {
-        console.log(foods);
+        // console.log(foods);
 
         this.favoriteFoods = foods;
       }
