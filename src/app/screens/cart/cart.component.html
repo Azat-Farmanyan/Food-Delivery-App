@@ -1,15 +1,29 @@
 <ion-content>
-  <!-- HEADER -->
-  <div class="header">
-    <h1 class="medium-title">{{ foodInCart.length }} towards at cart</h1>
+  <div *ngIf="foodInCart.length > 0; else foodsBlock">
+    <!-- HEADER -->
+    <div class="header">
+      <h1 class="medium-title">{{ foodInCart.length }} towards at cart</h1>
+    </div>
+
+    <div class="food-list-block">
+      <ion-list lines="none">
+        <app-food-card-in-cart
+          *ngFor="let food of foodInCart"
+          [item]="food"
+          (onMinus)="cartService.deleteItem(food.product)"
+          (onPlus)="cartService.addToCart(food.product)"
+        ></app-food-card-in-cart>
+      </ion-list>
+    </div>
   </div>
 
-  <div class="food-list-block">
-    <app-food-card-in-cart
-      *ngFor="let food of foodInCart"
-      [item]="food"
-      (onMinus)="cartService.deleteItem(food.product)"
-      (onPlus)="cartService.addToCart(food.product)"
-    ></app-food-card-in-cart>
-  </div>
+  <ng-template #foodsBlock>
+    <div class="empty-cart">
+      <ion-img
+        class="cart-icon"
+        src="../../../assets/icon/cart-icon-big.svg"
+      ></ion-img>
+      <p>Your cart is empty</p>
+    </div>
+  </ng-template>
 </ion-content>

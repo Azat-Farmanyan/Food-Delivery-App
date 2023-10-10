@@ -27,4 +27,8 @@ export class FoodCardInCartComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     // console.log(this.item);
   }
+
+  removeFromCart() {
+    console.log('remove from cart');
+  }
 }

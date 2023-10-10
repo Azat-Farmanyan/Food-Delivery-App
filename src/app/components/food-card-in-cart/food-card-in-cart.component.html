@@ -1,7 +1,35 @@
-<div class="card" *ngIf="item">
-  {{ item.product.title }} :
-  {{ item.amount }}
+<ion-item-sliding>
+  <ion-item class="ion-no-padding">
+    <div class="card" *ngIf="item">
+      <ion-img class="item-image" [src]="item.product.image"></ion-img>
 
-  <ion-button (click)="onMinus.emit()" shape="round"> - </ion-button>
-  <ion-button (click)="onPlus.emit()" shape="round"> + </ion-button>
-</div>
+      <div class="item-text-block">
+        <h3 class="item-title">
+          {{ item.product.title }}
+        </h3>
+        <p class="item-price"><sup>$</sup>{{ item.product.price }}</p>
+      </div>
+      <div class="actions">
+        <button class="action-btn plus-btn" (click)="onPlus.emit()">
+          <ion-img src="../../../assets/icon/plus.svg"></ion-img>
+        </button>
+
+        <p class="amount">
+          {{ item.amount }}
+        </p>
+        <button class="action-btn minus-btn" (click)="onMinus.emit()">
+          <ion-img src="../../../assets/icon/minus.svg"></ion-img>
+        </button>
+      </div>
+
+      <!-- <ion-button (click)="onMinus.emit()" shape="round"> - </ion-button>
+    <ion-button (click)="onPlus.emit()" shape="round"> + </ion-button> -->
+    </div>
+  </ion-item>
+
+  <ion-item-options side="end">
+    <ion-item-option (click)="removeFromCart()">
+      <ion-icon name="trash-outline" size="large" color="danger"></ion-icon>
+    </ion-item-option>
+  </ion-item-options>
+</ion-item-sliding>

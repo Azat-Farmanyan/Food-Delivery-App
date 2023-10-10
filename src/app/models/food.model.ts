@@ -8,5 +8,5 @@ export interface Food {
   favorite?: boolean;
   preparationTime?: number;
   rating?: number;
-  amount: number;
+  amount?: number;
 }
