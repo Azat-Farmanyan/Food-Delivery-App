@@ -1,3 +1,15 @@
 <ion-content>
-  <h1 style='position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);'>Coming soon</h1>
+  <!-- HEADER -->
+  <div class="header">
+    <h1 class="medium-title">{{ foodInCart.length }} towards at cart</h1>
+  </div>
+
+  <div class="food-list-block">
+    <app-food-card-in-cart
+      *ngFor="let food of foodInCart"
+      [item]="food"
+      (onMinus)="cartService.deleteItem(food.product)"
+      (onPlus)="cartService.addToCart(food.product)"
+    ></app-food-card-in-cart>
+  </div>
 </ion-content>

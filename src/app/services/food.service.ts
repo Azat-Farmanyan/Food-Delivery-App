@@ -21,6 +21,7 @@ export class FoodService {
         favorite: false,
         preparationTime: 15, // Example preparation time in minutes
         rating: 4.5, // Example rating out of 5
+        amount: 0,
       },
       {
         id: 2,
@@ -32,7 +33,8 @@ export class FoodService {
         category: 'Dishes',
         favorite: false,
         preparationTime: 30, // Example preparation time in minutes
-        rating: 4.7, // Example rating out of 5
+        rating: 4.7, // Example rating out of 5,
+        amount: 0,
       },
       {
         id: 3,
@@ -44,7 +46,8 @@ export class FoodService {
         category: 'Sushi',
         favorite: false,
         preparationTime: 10, // Example preparation time in minutes
-        rating: 4.8, // Example rating out of 5
+        rating: 4.8, // Example rating out of 5,
+        amount: 0,
       },
       {
         id: 4,
@@ -56,7 +59,8 @@ export class FoodService {
         category: 'Burgers',
         favorite: false,
         preparationTime: 20, // Example preparation time in minutes
-        rating: 4.4, // Example rating out of 5
+        rating: 4.4, // Example rating out of 5,
+        amount: 0,
       },
       {
         id: 5,
@@ -68,7 +72,8 @@ export class FoodService {
         category: 'Dishes',
         favorite: false,
         preparationTime: 25, // Example preparation time in minutes
-        rating: 4.6, // Example rating out of 5
+        rating: 4.6, // Example rating out of 5,
+        amount: 0,
       },
       {
         id: 6,
@@ -80,7 +85,8 @@ export class FoodService {
         category: 'Sushi',
         favorite: false,
         preparationTime: 15, // Example preparation time in minutes
-        rating: 4.9, // Example rating out of 5
+        rating: 4.9, // Example rating out of 5,
+        amount: 0,
       },
       {
         id: 7,
@@ -92,7 +98,8 @@ export class FoodService {
         category: 'Burgers',
         favorite: false,
         preparationTime: 15, // Example preparation time in minutes
-        rating: 4.3, // Example rating out of 5
+        rating: 4.3, // Example rating out of 5,
+        amount: 0,
       },
       {
         id: 8,
@@ -104,7 +111,8 @@ export class FoodService {
         category: 'Dishes',
         favorite: false,
         preparationTime: 20, // Example preparation time in minutes
-        rating: 4.7, // Example rating out of 5
+        rating: 4.7, // Example rating out of 5,
+        amount: 0,
       },
       {
         id: 9,
@@ -116,7 +124,8 @@ export class FoodService {
         category: 'Sushi',
         favorite: false,
         preparationTime: 10, // Example preparation time in minutes
-        rating: 4.5, // Example rating out of 5
+        rating: 4.5, // Example rating out of 5,
+        amount: 0,
       },
       {
         id: 10,
@@ -128,7 +137,8 @@ export class FoodService {
         category: 'Burgers',
         favorite: false,
         preparationTime: 18, // Example preparation time in minutes
-        rating: 4.4, // Example rating out of 5
+        rating: 4.4, // Example rating out of 5,
+        amount: 0,
       },
       {
         id: 11,
@@ -140,7 +150,8 @@ export class FoodService {
         category: 'Dishes',
         favorite: false,
         preparationTime: 25, // Example preparation time in minutes
-        rating: 4.6, // Example rating out of 5
+        rating: 4.6, // Example rating out of 5,
+        amount: 0,
       },
       {
         id: 12,
@@ -152,7 +163,8 @@ export class FoodService {
         category: 'Sushi',
         favorite: false,
         preparationTime: 15, // Example preparation time in minutes
-        rating: 4.8, // Example rating out of 5
+        rating: 4.8, // Example rating out of 5,
+        amount: 0,
       },
       {
         id: 13,
@@ -164,7 +176,8 @@ export class FoodService {
         category: 'Burgers',
         favorite: false,
         preparationTime: 17, // Example preparation time in minutes
-        rating: 4.3, // Example rating out of 5
+        rating: 4.3, // Example rating out of 5,
+        amount: 0,
       },
       {
         id: 14,
@@ -176,7 +189,8 @@ export class FoodService {
         category: 'Dishes',
         favorite: false,
         preparationTime: 12, // Example preparation time in minutes
-        rating: 4.5, // Example rating out of 5
+        rating: 4.5, // Example rating out of 5,
+        amount: 0,
       },
       {
         id: 15,
@@ -188,7 +202,8 @@ export class FoodService {
         category: 'Sushi',
         favorite: false,
         preparationTime: 20, // Example preparation time in minutes
-        rating: 4.9, // Example rating out of 5
+        rating: 4.9, // Example rating out of 5,
+        amount: 0,
       },
       {
         id: 16,
@@ -200,7 +215,8 @@ export class FoodService {
         category: 'Dishes',
         favorite: false,
         preparationTime: 22, // Example preparation time in minutes
-        rating: 4.7, // Example rating out of 5
+        rating: 4.7, // Example rating out of 5,
+        amount: 0,
       },
     ];
   }

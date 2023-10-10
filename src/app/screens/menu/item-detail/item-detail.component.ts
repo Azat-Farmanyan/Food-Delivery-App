@@ -13,6 +13,8 @@ import {
   keyframes,
 } from '@angular/animations';
 import { RouterService } from 'src/app/services/routerService';
+import { ToastService } from '../../../services/toastService';
+import { CartService } from 'src/app/services/cartService';
 
 @Component({
   selector: 'app-item-detail',
@@ -36,7 +38,9 @@ export class ItemDetailComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private foodService: FoodService,
     private favoriteService: FavoriteFoodService,
-    private routerService: RouterService
+    private routerService: RouterService,
+    private toastService: ToastService,
+    private cartService: CartService
   ) {}
 
   ngOnInit() {
@@ -70,6 +74,10 @@ export class ItemDetailComponent implements OnInit, OnDestroy {
       if (itemRes) this.item = itemRes;
     });
   }
+  addToCart() {
+    this.cartService.addToCart(this.item);
+    this.toastService.showToast(`${this.item.title} added to cart!`, 'top');
+  }
 
   goBack() {
     if (this.previousUrl) this.router.navigate([this.previousUrl]);
@@ -87,11 +95,19 @@ export class ItemDetailComponent implements OnInit, OnDestroy {
   addToFavorites() {
     this.favoriteService.addFavorite(this.item);
     this.isFavorite = true;
+    this.toastService.showToast(
+      `${this.item.title} added to favorites!`,
+      'top'
+    );
   }
 
   removeFromFavorites() {
     this.favoriteService.removeFavorite(this.item);
     this.isFavorite = false;
+    this.toastService.showToast(
+      `${this.item.title} removed from favorites!`,
+      'top'
+    );
   }
 
   ngOnDestroy(): void {

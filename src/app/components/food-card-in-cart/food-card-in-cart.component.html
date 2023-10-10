@@ -1,0 +1,7 @@
+<div class="card" *ngIf="item">
+  {{ item.product.title }} :
+  {{ item.amount }}
+
+  <ion-button (click)="onMinus.emit()" shape="round"> - </ion-button>
+  <ion-button (click)="onPlus.emit()" shape="round"> + </ion-button>
+</div>

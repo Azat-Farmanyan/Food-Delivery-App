@@ -10,7 +10,9 @@ import {
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { Food } from 'src/app/models/food.model';
+import { CartService } from 'src/app/services/cartService';
 import { FavoriteFoodService } from 'src/app/services/favoriteFood.service';
+import { ToastService } from 'src/app/services/toastService';
 
 @Component({
   selector: 'app-food-card',
@@ -22,31 +24,22 @@ export class FoodCardComponent implements OnInit, OnChanges {
   noProduct: boolean = false;
 
   constructor(
-    private toastController: ToastController,
     public favoriteFoodService: FavoriteFoodService,
-    private router: Router
+    private router: Router,
+    private cartService: CartService,
+    private toastService: ToastService
   ) {}
 
   ngOnInit() {}
 
-  async presentToast(position: 'top' | 'middle' | 'bottom') {
-    const toast = await this.toastController.create({
-      message: 'The product is added to the basket successfully',
-      duration: 2000,
-      position: position,
-    });
-
-    await toast.present();
-  }
-
   addToFavorite(food: Food) {
     this.favoriteFoodService.addFavorite(food);
-    this.presentToast('top');
   }
 
   addToCart(event: Event) {
     event.stopPropagation();
-    console.log('add to cart');
+    this.cartService.addToCart(this.item);
+    this.toastService.showToast(`${this.item.title} added to cart!`, 'top');
   }
 
   ngOnChanges(changes: SimpleChanges): void {
